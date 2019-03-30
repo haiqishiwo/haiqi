@@ -6,7 +6,8 @@
 
 
 
-1.MySqlUtils:(注：使用该工具类需安装go-mysql驱动，地址:https://github.com/go-sql-driver/mysql)
+1.MySqlUtils:(注：使用该工具类需安装go-mysql驱动，地址:https://github.com/go-sql-driver/mysql)。
+
 操作mysql的Utils，基于go-mysql驱动，tcp协议，传sql语句即可操作mysql
 带有数据库连接池，默认不带有，请在配置文件中配置
 在配置文件中配置数据库连接数，不可配置负数和非数字，配置0表示不使用数据库连接池
@@ -14,46 +15,56 @@
 
 方法
 （1）Query(query string,where ...string)[]map[string]string 
-mysql的查询封装
-第一个参数为sql语句，后面参数若有则为占位符
+
+mysql的查询封装，第一个参数为sql语句，后面参数若有则为占位符
 返回值：查询出的结果，切片中套map形式且结果都为string，切片中每个索引为查出的一行，map为查出的数据
+
 （2） Update(sqlUpdata string,where ...string) 
+
 增删改单条，不带事务
 参数：sqlUpdate:SQL语句，where 条件
+
 （3） Updates(sql [][]string) 
-带事务
-增删改多条，参数：切片中套切片，第一个切片记录多少条语句，第2个切片第一个索引处为sql语句，后面为条件
+
+带事务，增删改多条，参数：切片中套切片，第一个切片记录多少条语句，第2个切片第一个索引处为sql语句，后面为条件
 参数 eg:[[update xcx_userStatus set url = 'a' where id = 1 ] [insert into xcx_userStatus (id) values (?)    6]]
  
  
  2.Utilts
-（1）StringSlice(str string) []string 
+（1）StringSlice(str string) []string
+
 将字符串转化为字符串切片返回
 
 （2）GetStringIndex(str string,indexStr string) int
-获取字符串中含有某个字符的第一个索引
-参数：str 整个字符串
-     indexStr 整个字符串中要包含的字符
-返回：第一个索引，无则返回-1
+
+获取字符串中含有某个字符的第一个索引。
+参数：str 整个字符串。
+     indexStr 整个字符串中要包含的字符。
+返回：第一个索引，无则返回-1。
 
 （3） GetStringLastIndex(str string,indexStr string) int
-获取字符串中含有某个字符的最后一个索引
-参数：str 整个字符串
-     indexStr 整个字符串中要包含的字符
-返回：第一个索引，无则返回-1
+
+获取字符串中含有某个字符的最后一个索引。
+参数：str 整个字符串。
+     indexStr 整个字符串中要包含的字符。
+返回：第一个索引，无则返回-1。
 
 （4） GetStringIndexForNum(str string,indexStr string,indexS int) int 
-获取字符串中含有某个字符的第自定义个索引
-参数：str 整个字符串
-     indexstr 整个字符串中要包含的字符
-	 indexs  字符串中要包含的第几个位置字符
-返回：第indexs个索引，无则返回-1
+
+获取字符串中含有某个字符的第自定义个索引。
+参数：str 整个字符串。
+     indexstr 整个字符串中要包含的字符。
+     indexs  字符串中要包含的第几个位置字符。
+返回：第indexs个索引，无则返回-1。
 
 （5）DefaultValue(value string,defaultBalue string)string
+
 模拟三元表达式，value不为""则返回本身，否则返回默认值
 
 
+
 3.redisUtils(注：使用该工具类需安装redigo驱动，地址:https://github.com/gomodule/redigo)
+
 （1）SetRedis(key string,value string)
 设置redis的值，string形式
 
