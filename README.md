@@ -1,4 +1,3 @@
-# haiqigo
 # 常用的工具类和数据库操作工具类
 1.基于go-mysql驱动开发的工具类，只用传递sql语句即可操作mysql数据库，可配置连接池参数（MySqlUtils）
 2.自己开发整理的常用工具类（Utilts）
