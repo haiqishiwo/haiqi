@@ -9,7 +9,7 @@
 
 
 
-1.MySqlUtils:(注：使用该工具类需安装go-mysql驱动，地址:https://github.com/go-sql-driver/mysql)。
+1.MySqlUtils:(注：使用该工具类需安装go-mysql驱动，地址:https://github.com/go-sql-driver/mysql)
 
 操作mysql的Utils，基于go-mysql驱动，tcp协议，传sql语句即可操作mysql
 带有数据库连接池，默认不带有，请在配置文件中配置
